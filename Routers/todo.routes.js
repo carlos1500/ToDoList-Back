@@ -5,19 +5,19 @@ const ToDoController = require('../Controller/toDos.controller');
 
 const todoController = new ToDoController();
 
-//[GET]-------------------
+//Leitura
 router.get('/', todoController.getTarefa)
 
-//[GET] por ID ------------------
+//Leitua por  ID
 router.get('/:id', todoController.getTarefaById)
 
-//[POST]---------------
+//postagem
 router.post('/add', todoController.createTarefa)
 
-//[PUT]----------------
+//Atualização
 router.put('/:id', todoController.editTarefa)
 
-//[DELETE]--------------
+//Deleção
 router.delete('/:id', todoController.deleteTarefa)
 
 

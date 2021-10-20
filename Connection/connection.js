@@ -13,4 +13,6 @@ function Conn(url, user, pass, banco){
     });
 }
 
+
+
 module.exports = Conn; 
