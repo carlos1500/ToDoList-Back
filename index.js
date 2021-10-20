@@ -1,11 +1,13 @@
 if(process.env.NODE_ENV !== 'production'){
-    
     require('dotenv').config();
 }
 
 const express = require('express');
+const cors = require('cors')
+
 const app = express();
 app.use(express.json());
+app.use(cors())
 
 const Conn = require('./Connection/connection');
 const db_url = process.env.DB_URL;
@@ -22,5 +24,5 @@ const TodoListRouter = require('./Routers/todo.routes')
 app.use('/tarefas', TodoListRouter);
 
 app.listen(process.env.PORT|| port, ()=>{
-    console.info(`Servidor rodando na porta ${port}`)
+    console.log(`Servidor rodando na porta ${port}`)
 });
