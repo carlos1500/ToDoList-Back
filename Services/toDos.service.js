@@ -1,4 +1,4 @@
-const Todo = require('../Models/TodoList');
+const Todo = require('../Models/todoList');
 
 class TodoService {
     findAll = async () => {
@@ -9,7 +9,6 @@ class TodoService {
         return await Todo.findById(id);
     }
 
-    //Criar um Todo
     createTarefa = async (todo)=> {
         return await Todo.create(todo);
     }
@@ -17,6 +16,7 @@ class TodoService {
     editTarefa = async (id, todo) => {
         return await Todo.updateOne({_id:id }, todo);
     }
+
     deleteTarefa = async (id) => {
         return await Todo.deleteOne({ _id: id });
     }
